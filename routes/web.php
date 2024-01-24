@@ -15,7 +15,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // fetch all users
+    $users = DB::select("slect * from users");
+
+    //create new user
+    //$users = DB::insert('insert into users (name, email, password) values (?,?,?)', [
+    //    'Vitor',
+    //    'vitor@gmail.com',
+    //    'password',
+    //]);
+    
+    //uptade a user
+    //$users = DB::update("update users set email=? where id=?", [
+    //    'vitor@gmail.com',
+    //    3,
+    //]); 
+
+    //delete a user
+    //$users = DB::delete("delete from users where id=3");
+    
+    dd($users);
 });
 
 Route::get('/dashboard', function () {
